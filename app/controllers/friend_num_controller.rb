@@ -1,7 +1,11 @@
 class FriendNumController < ApplicationController
     attr_accessor :res, :num
 
-    def input; end
+    def input
+      if !current_user
+        redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
+      end
+    end
     
     def sum_divisors(arg)
       sum = 0
@@ -24,11 +28,15 @@ class FriendNumController < ApplicationController
     end
   
     def result
-      @num = params[:num].to_i
-      @res = check
-      respond_to do |format|
-        format.html { redirect_to :root }
-        format.js
+      if current_user
+        @num = params[:num].to_i
+        @res = check
+        respond_to do |format|
+          format.html { redirect_to :friend_num_inp }
+          format.js
+        end
+      else
+        redirect_to login_p, notice: "You did not log in. Please log in to access these pages"
       end
     end
 end

@@ -557,3 +557,357 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 5032)
 
 
+Started GET "/" for 127.0.0.1 at 2021-12-16 20:45:20 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1043)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/hoangphuong/Projects/gitclone/RailsLab12/public/packs
+[Webpacker] Hash: e2f281de3ea1fdc4fa5a
+Version: webpack 4.46.0
+Time: 1595ms
+Built at: 12/16/2021 8:45:23 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-be412d64645010827f4e.js    125 KiB  application  [emitted] [immutable]  application
+js/application-be412d64645010827f4e.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-be412d64645010827f4e.js js/application-be412d64645010827f4e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3018.4ms | Allocations: 24276)
+Completed 200 OK in 3033ms (Views: 3023.5ms | ActiveRecord: 0.0ms | Allocations: 31082)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:45:30 +0300
+  
+SyntaxError (/home/hoangphuong/Projects/gitclone/RailsLab12/app/controllers/friend_num_controller.rb:27: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+      if (current_user) do
+                        ^~
+/home/hoangphuong/Projects/gitclone/RailsLab12/app/controllers/friend_num_controller.rb:34: else without rescue is useless
+      else
+      ^~~~
+/home/hoangphuong/Projects/gitclone/RailsLab12/app/controllers/friend_num_controller.rb:38: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/friend_num_controller.rb:27: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/friend_num_controller.rb:34: else without rescue is useless
+app/controllers/friend_num_controller.rb:38: syntax error, unexpected `end', expecting end-of-input
+app/controllers/friend_num_controller.rb:27: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/friend_num_controller.rb:34: else without rescue is useless
+app/controllers/friend_num_controller.rb:38: syntax error, unexpected `end', expecting end-of-input
+app/controllers/friend_num_controller.rb:27: syntax error, unexpected `do', expecting `then' or ';' or '\n'
+app/controllers/friend_num_controller.rb:34: else without rescue is useless
+app/controllers/friend_num_controller.rb:38: syntax error, unexpected `end', expecting end-of-input
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:45:57 +0300
+Processing by FriendNumController#input as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering friend_num/input.html.erb within layouts/application
+  Rendered friend_num/input.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1679)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1749)
+Completed 500 Internal Server Error in 4ms (Allocations: 2746)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+     9: </head>
+    10: <body>
+    11: 
+    12:         <h1>FRIEND NUMBER - Logged in as <%=current_user.username %></h1>
+    13:         <h3>Two numbers are called friend if each of them is equal to the sum of all divisors of another, except for this number itself. </h3>
+    14:         <%= form_with(url: friend_num_path, method: "post", local: false) do |form|%>
+    15:             <%= form.label :num, "Enter n: " %>
+  
+app/views/friend_num/input.html.erb:12
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:46:56 +0300
+Processing by FriendNumController#input as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering friend_num/input.html.erb within layouts/application
+  Rendered friend_num/input.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1612)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1682)
+Completed 500 Internal Server Error in 4ms (Allocations: 2890)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+     8:     <title>Friend Number</title>
+     9: </head>
+    10: <body>
+    11:         <h1>FRIEND NUMBER - Logged in as <%=current_user.username %></h1>
+    12:         <h3>Two numbers are called friend if each of them is equal to the sum of all divisors of another, except for this number itself. </h3>
+    13:         <%= form_with(url: friend_num_path, method: "post", local: false) do |form|%>
+    14:             <%= form.label :num, "Enter n: " %>
+  
+app/views/friend_num/input.html.erb:11
+Started GET "/" for 127.0.0.1 at 2021-12-16 20:47:01 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3830)
+Completed 200 OK in 12ms (Views: 10.2ms | Allocations: 4839)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:47:42 +0300
+Processing by FriendNumController#input as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (Allocations: 342)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:47:42 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3399)
+Completed 200 OK in 10ms (Views: 8.8ms | Allocations: 4021)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:48:20 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3368)
+Completed 200 OK in 10ms (Views: 9.1ms | Allocations: 3995)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:48:30 +0300
+Processing by FriendNumController#input as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (Allocations: 298)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:48:30 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3280)
+Completed 200 OK in 12ms (Views: 10.4ms | Allocations: 3720)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-12-16 20:48:40 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"phuonght.hp@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "phuonght.hp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/friend_num
+Completed 302 Found in 267ms (ActiveRecord: 1.9ms | Allocations: 6855)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:48:40 +0300
+Processing by FriendNumController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering friend_num/input.html.erb within layouts/application
+  Rendered friend_num/input.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1808)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4765)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 6059)
+
+
+Started POST "/result" for 127.0.0.1 at 2021-12-16 20:48:53 +0300
+Processing by FriendNumController#result as JS
+  Parameters: {"authenticity_token"=>"[FILTERED]", "num"=>"2344", "commit"=>"Get result"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering friend_num/result.js.erb
+  Rendered friend_num/_result.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered friend_num/result.js.erb (Duration: 2.7ms | Allocations: 608)
+Completed 200 OK in 321ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 7403)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-12-16 20:48:55 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:48:55 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3281)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3736)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-16 20:56:47 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 946)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7430)
+Completed 200 OK in 47ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 11081)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2021-12-16 20:56:53 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.8ms | Allocations: 5114)
+  Rendered users/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 8553)
+Completed 200 OK in 43ms (Views: 25.2ms | ActiveRecord: 1.4ms | Allocations: 13793)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-12-16 20:57:03 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:57:03 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3282)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3731)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-12-16 20:57:11 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"phuonght.hp@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "phuonght.hp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/friend_num
+Completed 302 Found in 225ms (ActiveRecord: 0.2ms | Allocations: 3277)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:57:12 +0300
+Processing by FriendNumController#input as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering friend_num/input.html.erb within layouts/application
+  Rendered friend_num/input.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1476)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4432)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 6129)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-12-16 20:57:22 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4259)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.6ms | Allocations: 5425)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 20:57:41 +0300
+Processing by FriendNumController#input as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering friend_num/input.html.erb within layouts/application
+  Rendered friend_num/input.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4082)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5082)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-12-16 20:57:42 +0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 297)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:57:42 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3281)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3736)
+
+
+Started GET "/users" for 127.0.0.1 at 2021-12-16 20:57:48 +0300
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:57:48 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3282)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3730)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-12-16 20:57:54 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:79:in `set_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 843)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 20:57:54 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3280)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3725)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 21:00:57 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 568)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3778)
+Completed 200 OK in 15ms (Views: 14.5ms | Allocations: 5015)
+
+
+Started GET "/friend_num" for 127.0.0.1 at 2021-12-16 21:01:08 +0300
+Processing by FriendNumController#input as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (Allocations: 314)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-12-16 21:01:08 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3287)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 3737)
+
+

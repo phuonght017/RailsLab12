@@ -3,11 +3,18 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    if current_user
+      @users = User.all
+    else
+      redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
+    end    
   end
 
   # GET /users/1 or /users/1.json
   def show
+    if !current_user
+      redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
+    end
   end
 
   # GET /users/new
@@ -17,6 +24,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if !current_user
+      redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
+    end
   end
 
   # POST /users or /users.json
@@ -35,23 +45,31 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    if current_user
+      respond_to do |format|
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: "User was successfully updated." }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
     end
   end
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+    if current_user
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+     redirect_to :login_p, notice: "You did not log in. Please log in to access these pages"
     end
   end
 
